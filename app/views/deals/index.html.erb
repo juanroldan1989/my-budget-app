@@ -1,6 +1,6 @@
 <% @results.each do |deal| %>
-  <p><%= deal.title %></p>
-  <p><%= deal.description %></p>
-
-  <hr>
+  <div class="primary callout">
+    <code><%= deal.title %></code>
+    <p><%= deal.description %></p>
+  </div>
 <% end %>
