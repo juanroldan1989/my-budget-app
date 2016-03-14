@@ -21,6 +21,7 @@ namespace :deals do
               min_price:   first_deal.min_price < second_deal.min_price ? first_deal.min_price : second_deal.min_price,
               max_price:   first_deal.max_price < second_deal.max_price ? first_deal.max_price : second_deal.min_price,
               price:       (first_deal.price.to_i + second_deal.price.to_i),
+              price_text:  (first_deal.price_text + second_deal.price_text),
               image_urls:  [first_deal.image_urls, second_deal.image_urls].flatten.compact,
               links:       first_deal.links    + second_deal.links,
               keywords:    first_deal.keywords + second_deal.keywords
@@ -49,6 +50,7 @@ namespace :deals do
               min_price:   first_deal.min_price < second_deal.min_price ? first_deal.min_price : second_deal.min_price,
               max_price:   first_deal.max_price < second_deal.max_price ? first_deal.max_price : second_deal.min_price,
               price:       (first_deal.price.to_i + second_deal.price.to_i),
+              price_text:  (first_deal.price_text + second_deal.price_text),
               image_urls:  [first_deal.image_urls, second_deal.image_urls].flatten.compact,
               links:       first_deal.links    + second_deal.links,
               keywords:    first_deal.keywords + second_deal.keywords
@@ -77,6 +79,7 @@ namespace :deals do
               min_price:   first_deal.min_price < second_deal.min_price ? first_deal.min_price : second_deal.min_price,
               max_price:   first_deal.max_price < second_deal.max_price ? first_deal.max_price : second_deal.min_price,
               price:       (first_deal.price.to_i + second_deal.price.to_i),
+              price_text:  (first_deal.price_text + second_deal.price_text),
               image_urls:  [first_deal.image_urls, second_deal.image_urls].flatten.compact,
               links:       first_deal.links    + second_deal.links,
               keywords:    first_deal.keywords + second_deal.keywords

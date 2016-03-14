@@ -17,7 +17,7 @@ class ScrapBookMeDeal
       title:       page.css(".activityWrapper h2").text,
       description: sanitize_description,
       deal_type:   "single",
-      price_text:  sanitize_price_text,
+      price_text:  [sanitize_price_text],
       price:       sanitize_price,
       image_urls:  [sanitize_image_url],
       links:       [deal_url],
@@ -43,14 +43,14 @@ class ScrapBookMeDeal
 
     @sanitize_price_text ||= if with_text.any?
       with_money = with_text.collect { |item| item if item.text.include?("$") }.compact
-      with_money.any? ? with_money.first.text : "To confirm"
+      with_money.any? ? with_money.first.text : "Price to confirm"
     else
-      "To confirm"
+      "Price to confirm"
     end
   end
 
   def sanitize_price
-    if @sanitize_price_text == "To confirm"
+    if @sanitize_price_text == "Price to confirm"
       0
     else
       @sanitize_price_text.scan(/\d+/).first.to_i

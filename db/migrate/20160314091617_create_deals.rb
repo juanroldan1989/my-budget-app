@@ -7,7 +7,7 @@ class CreateDeals < ActiveRecord::Migration
       t.decimal :min_price,  precision: 10, scale: 2, default: 0.0
       t.decimal :max_price,  precision: 10, scale: 2, default: 0.0
       t.decimal :price,      precision: 10, scale: 2, default: 0.0
-      t.text    :price_text
+      t.text    :price_text, array: true, default: []
       t.text    :image_urls, array: true, default: []
       t.text    :links,      array: true, default: []
       t.text    :keywords,   array: true, default: []
