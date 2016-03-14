@@ -118,7 +118,7 @@ DEPENDENCIES
   faker (~> 1.6.3)
   foreman (~> 0.78.0)
   has_scope (~> 0.6.0.rc)
-  jquery-rails
+  jquery-rails (~> 3.1.4)
   nokogiri (~> 1.6.7.2)
   pg (~> 0.18.4)
   pg_search (~> 1.0.5)

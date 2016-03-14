@@ -4,7 +4,7 @@ ruby "2.1.2"
 
 gem "sass-rails",               "~> 4.0.3"
 gem "uglifier",                 ">= 1.3.0"
-gem "jquery-rails"
+gem "jquery-rails",             "~> 3.1.4"
 gem "faker",                    "~> 1.6.3"
 gem "has_scope",                "~> 0.6.0.rc"
 gem "nokogiri",                 "~> 1.6.7.2"
