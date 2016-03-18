@@ -18,6 +18,10 @@ class DealsController < ApplicationController
   def combined
   end
 
+  def show
+    @deal = Deal.find params[:id]
+  end
+
   private
 
   def deal_filter

@@ -1,0 +1,21 @@
+<div data-role="header" data-position="fixed" data-theme="a">
+  <a href="/" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
+    <h1>Home</h1>
+</div><!-- /header -->
+
+<div data-role="page" data-title="Deals in Auckland">
+  <div role="main" class="ui-content jqm-content jqm-fullwidth">
+    <img src="<%= @deal.image_urls.first %>">
+    <h2>
+      <% if @deal.price.to_i > 0 %>
+        <b>$<%= @deal.price %> - <%= @deal.title %></b>
+      <% else %>
+        <b><%= @deal.price_text.first %> - <%= @deal.title %></b>
+      <% end %>
+    </h2>
+    <p><%= @deal.description %></p>
+    <a href="<%= @deal.links.first %>" class="ui-btn ui-icon-action ui-btn-icon-left ui-shadow ui-corner-all" target="blank">Check on website</a>
+  </div>
+</div>
+
+<%= render partial: "navbar" %>

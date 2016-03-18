@@ -3,6 +3,8 @@
     <h1>Home</h1>
 </div><!-- /header -->
 
+<!-- http://demos.jquerymobile.com/1.4.5/tabs/ -->
+
 <div data-role="page" data-title="Deals in Auckland">
   <div role="main" class="ui-content jqm-content jqm-fullwidth">
 
@@ -11,16 +13,18 @@
       <li data-role="list-divider" data-theme="b">Single Deals</li>
       <% single_deals.each do |single| %>
         <li>
-          <a href="/deals/<%= single.id %>" data-prefetch="true" data-transition="slide">
-            <img src="<%= single.image_urls.first %>">
+          <a href="/deals/<%= single.slug %>" data-prefetch="true" data-transition="slide">
+            <img src="<%= single.image_urls.first %>" class="listing">
             <h2>
-              <% if single.price.to_i > 0 %>
-                <b>$<%= single.price %> - <%= single.title %></b>
-              <% else %>
-                <b><%= single.price_text.first %> - <%= single.title %></b>
-              <% end %>
+              <%= single.title %>
             </h2>
-            <p><%= single.description %></p>
+            <p>
+              <% if single.price.to_i > 0 %>
+                <b>$<%= single.price %></b>
+              <% else %>
+                <b><%= single.price_text.first %></b>
+              <% end %>
+            </p>
           </a>
         </li>
       <% end %>
@@ -28,8 +32,8 @@
       <li data-role="list-divider" data-theme="b">Combined Deals</li>
       <% combined_deals.each do |combined| %>
         <li>
-          <a href="/deals/<%= combined.id %>" data-prefetch="true" data-transition="slide">
-            <img src="<%= combined.image_urls.first %>">
+          <a href="/deals/<%= combined.slug %>" data-prefetch="true" data-transition="slide">
+            <img src="<%= combined.image_urls.first %>" class="listing">
             <h2>
               <% if combined.price.to_i > 0 %>
                 <b>$<%= combined.price %> - <%= combined.title %></b>
