@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :deals, only: [:index]
+  get "/deals"          => "deals#index"
+  get "/deals/single"   => "deals#single"
+  get "/deals/combined" => "deals#combined"
 
   root "deals#index"
 end

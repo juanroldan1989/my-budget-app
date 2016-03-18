@@ -10,7 +10,12 @@ class DealsController < ApplicationController
   helper_method :single_deals
 
   def index
-    @results = deal_filter.results
+  end
+
+  def single
+  end
+
+  def combined
   end
 
   private

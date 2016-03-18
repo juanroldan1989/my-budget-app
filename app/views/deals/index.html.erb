@@ -1,52 +1,65 @@
-<h1>Single Deals</h1>
+<div data-role="header" data-position="fixed" data-theme="a">
+  <a href="../toolbar/" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
+    <h1>Home</h1>
+</div><!-- /header -->
 
-<% single_deals.each do |single| %>
-  <div class="primary callout">
-    <code>
-      <% if single.price.to_i > 0 %>
-        <b>$<%= single.price %> - </b>
-      <% end %>
-      <%= single.title %>
-    </code>
-    <p><%= single.description %></p>
+<div data-role="page" data-title="Deals in Auckland">
 
-    <img class="thumbnail" src="<%= single.image_urls.first %>">
+  <div role="main" class="ui-content jqm-content jqm-fullwidth">
 
-    <a class="large expanded button" href="<%= single.links.first %>" target="blank">
-      <% if single.price.to_i > 0 %>
-        <%= "$#{single.price}" %>
-      <% else %>
-        <%= single.price_text.first %>
-      <% end %>
-    </a>
-  </div>
-<% end %>
+  <% single_deals.each do |single| %>
+    <div class="primary callout">
+      <code>
+        <% if single.price.to_i > 0 %>
+          <b>$<%= single.price %> - </b>
+        <% end %>
+        <%= single.title %>
+      </code>
+      <p><%= single.description %></p>
 
-<h1>Combined Deals</h1>
+      <img class="thumbnail" src="<%= single.image_urls.first %>">
 
-<% combined_deals.each do |combined| %>
-  <div class="primary callout success">
-    <code>
-      <% if combined.price.to_i > 0 %>
-        <b>$<%= combined.price %> Combined - </b>
-      <% end %>
-      <%= combined.title %>
-    </code>
-    <p><%= combined.description %></p>
+      <a class="large expanded button" href="<%= single.links.first %>" target="blank">
+        <% if single.price.to_i > 0 %>
+          <%= "$#{single.price}" %>
+        <% else %>
+          <%= single.price_text.first %>
+        <% end %>
+      </a>
+    </div>
+  <% end %>
 
-    <% combined.image_urls.each_with_index do |image_url, index| %>
-      <div class="row">
-        <div class="small-8 medium-8 large-8 columns">
-          <img class="thumbnail" src="<%= image_url %>">
+  <h1>Combined Deals</h1>
+
+  <% combined_deals.each do |combined| %>
+    <div class="primary callout success">
+      <code>
+        <% if combined.price.to_i > 0 %>
+          <b>$<%= combined.price %> Combined - </b>
+        <% end %>
+        <%= combined.title %>
+      </code>
+      <p><%= combined.description %></p>
+
+      <% combined.image_urls.each_with_index do |image_url, index| %>
+        <div class="row">
+          <div class="small-8 medium-8 large-8 columns">
+            <img class="thumbnail" src="<%= image_url %>">
+          </div>
+          <div class="small-4 medium-4 large-4 columns">
+            <a class="large expanded button success" href="<%= combined.links[index] %>" target="blank">
+              <%= combined.price_text[index] %>
+            </a>
+          </div>
         </div>
-        <div class="small-4 medium-4 large-4 columns">
-          <a class="large expanded button success" href="<%= combined.links[index] %>" target="blank">
-            <%= combined.price_text[index] %>
-          </a>
-        </div>
-      </div>
-      <br/>
-    <% end %>
+        <br/>
+      <% end %>
 
-  </div>
-<% end %>
+    </div>
+  <% end %>
+
+  </div><!-- /content -->
+
+</div><!-- /page -->
+
+<%= render partial: "navbar" %>
