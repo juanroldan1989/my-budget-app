@@ -7,6 +7,7 @@
   <div role="main" class="ui-content jqm-content jqm-fullwidth">
 
     <ul data-role="listview" data-inset="false">
+
       <li data-role="list-divider" data-theme="b">Single Deals</li>
       <% single_deals.each do |single| %>
         <li>
@@ -25,7 +26,6 @@
       <% end %>
 
       <li data-role="list-divider" data-theme="b">Combined Deals</li>
-
       <% combined_deals.each do |combined| %>
         <li>
           <a href="/deals/<%= combined.id %>" data-prefetch="true" data-transition="slide">
@@ -41,6 +41,7 @@
           </a>
         </li>
       <% end %>
+
     </ul>
 
   </div><!-- /content -->
