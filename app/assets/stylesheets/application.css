@@ -11,7 +11,5 @@
  * file per style scope.
  *
  *= require_self
- *= require foundation.min
- *= require foundation-flex
- *= require foundation-rtl
+ *= require jquery.mobile-1.4.5.min
  */
