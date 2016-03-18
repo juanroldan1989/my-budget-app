@@ -1,0 +1,41 @@
+<div data-role="header" data-position="fixed" data-theme="a">
+  <a href="../toolbar/" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
+    <h1>Home</h1>
+</div><!-- /header -->
+
+<div data-role="page" data-title="Combined Deals">
+
+  <div role="main">
+
+  <% combined_deals.each do |combined| %>
+    <div class="primary callout success">
+      <code>
+        <% if combined.price.to_i > 0 %>
+          <b>$<%= combined.price %> Combined - </b>
+        <% end %>
+        <%= combined.title %>
+      </code>
+      <p><%= combined.description %></p>
+
+      <% combined.image_urls.each_with_index do |image_url, index| %>
+        <div class="row">
+          <div class="small-8 medium-8 large-8 columns">
+            <img class="thumbnail" src="<%= image_url %>">
+          </div>
+          <div class="small-4 medium-4 large-4 columns">
+            <a class="large expanded button success" href="<%= combined.links[index] %>" target="blank">
+              <%= combined.price_text[index] %>
+            </a>
+          </div>
+        </div>
+        <br/>
+      <% end %>
+
+    </div>
+  <% end %>
+
+  </div><!-- /content -->
+
+</div><!-- /page -->
+
+<%= render partial: "navbar" %>
