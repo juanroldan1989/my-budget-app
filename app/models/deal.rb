@@ -1,4 +1,7 @@
 class Deal < ActiveRecord::Base
+  extend FriendlyId
+    friendly_id :title, use: [:slugged, :finders] # you can now do MyClass.find('bar')
+
   # https://github.com/Casecommons/pg_search
   include PgSearch
 
@@ -27,5 +30,10 @@ class Deal < ActiveRecord::Base
                         prefix: true, dictionary: "english"
                       }
                     }
+
+  # limiting deal's slug to 40 characters
+  def normalize_friendly_id(string)
+    super[0..39]
+  end
 
 end

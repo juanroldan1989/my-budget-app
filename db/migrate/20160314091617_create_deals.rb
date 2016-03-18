@@ -2,6 +2,7 @@ class CreateDeals < ActiveRecord::Migration
   def change
     create_table :deals do |t|
       t.string  :title
+      t.string  :slug
       t.text    :description
       t.string  :deal_type
       t.decimal :min_price,  precision: 10, scale: 2, default: 0.0
@@ -16,6 +17,7 @@ class CreateDeals < ActiveRecord::Migration
     end
 
     add_index :deals, :title
+    add_index :deals, :slug,     unique: true
     add_index :deals, :deal_type
     add_index :deals, :min_price
     add_index :deals, :max_price
