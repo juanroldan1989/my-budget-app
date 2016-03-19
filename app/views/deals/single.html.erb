@@ -9,7 +9,7 @@
     <ul data-role="listview" data-inset="false">
       <% single_deals.each do |single| %>
         <li>
-          <a href="/deals/<%= single.id %>" data-prefetch="true" data-transition="slide">
+          <a href="/deals/<%= single.id %>" data-transition="slide">
             <img src="<%= single.image_urls.first %>" class="listing">
             <h2>
               <%= single.title %>

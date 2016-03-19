@@ -13,7 +13,7 @@
       <li data-role="list-divider" data-theme="b">Single Deals</li>
       <% single_deals.each do |single| %>
         <li>
-          <a href="/deals/<%= single.slug %>" data-prefetch="true" data-transition="slide">
+          <a href="/deals/<%= single.slug %>" data-transition="slide">
             <img src="<%= single.image_urls.first %>" class="listing">
             <h2>
               <%= single.title %>
@@ -32,7 +32,7 @@
       <li data-role="list-divider" data-theme="b">Combined Deals</li>
       <% combined_deals.each do |combined| %>
         <li>
-          <a href="/deals/<%= combined.slug %>" data-prefetch="true" data-transition="slide">
+          <a href="/deals/<%= combined.slug %>" data-transition="slide">
             <img src="<%= combined.image_urls.first %>" class="listing">
             <h2>
               <%= combined.title %>
