@@ -5,16 +5,27 @@
 
 <div data-role="page" data-title="Deals in Auckland">
   <div role="main" class="ui-content jqm-content jqm-fullwidth">
-    <img src="<%= @deal.image_urls.first %>" class="show">
+
     <h2>
       <% if @deal.price.to_i > 0 %>
         <b>$<%= @deal.price %> - <%= @deal.title %></b>
       <% else %>
-        <b><%= @deal.price_text.first %> - <%= @deal.title %></b>
+        <b><%= @deal.price_text[0] %> - <%= @deal.title %></b>
       <% end %>
     </h2>
+
+    <img src="<%= @deal.image_urls[0] %>" class="show">
     <p><%= @deal.description %></p>
-    <a href="<%= @deal.links.first %>" class="ui-btn ui-icon-action ui-btn-icon-left ui-shadow ui-corner-all" target="blank">Check on website</a>
+    <a href="<%= @deal.links[0] %>" class="ui-btn ui-icon-action ui-btn-icon-left ui-shadow ui-corner-all" target="blank">Check on website</a>
+
+    <% if @deal.is_combined? %>
+      <br/>
+
+      <img src="<%= @deal.image_urls[1] %>" class="show">
+      <p><%= @deal.description %></p>
+      <a href="<%= @deal.links[1] %>" class="ui-btn ui-icon-action ui-btn-icon-left ui-shadow ui-corner-all" target="blank">Check on website</a>
+    <% end %>
+
   </div>
 </div>
 

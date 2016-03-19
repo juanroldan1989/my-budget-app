@@ -31,6 +31,10 @@ class Deal < ActiveRecord::Base
                       }
                     }
 
+  def is_combined?
+    deal_type == "combined"
+  end
+
   # limiting deal's slug to 40 characters
   def normalize_friendly_id(string)
     super[0..39]
