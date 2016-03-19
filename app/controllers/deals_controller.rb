@@ -29,10 +29,12 @@ class DealsController < ApplicationController
   end
 
   def single_deals
-    @single_deals ||= DealFilter.new.by_type("single").results
+    @single_deals ||=
+      DealFilter.new.by_type("single").by_sort("price").results
   end
 
   def combined_deals
-    @combined_deals ||= DealFilter.new.by_type("combined").results
+    @combined_deals ||=
+      DealFilter.new.by_type("combined").by_sort("price").results
   end
 end
