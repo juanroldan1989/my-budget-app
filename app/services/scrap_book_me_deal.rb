@@ -20,8 +20,7 @@ class ScrapBookMeDeal
       price_text:  [sanitize_price_text],
       price:       sanitize_price,
       image_urls:  [sanitize_image_url],
-      links:       [deal_url],
-      keywords:    []
+      links:       [deal_url]
     }
   end
 

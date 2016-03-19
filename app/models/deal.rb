@@ -15,6 +15,8 @@ class Deal < ActiveRecord::Base
   validates :price,     presence: true
   validates :deal_type, presence: true
 
+  before_save :set_keywords
+
   pg_search_scope :title_search, against: :title,
                     using: {
                       tsearch: {
@@ -40,4 +42,12 @@ class Deal < ActiveRecord::Base
     super[0..39]
   end
 
+  private
+
+  def set_keywords
+    # "combined" deals get their keywords set by rake task
+    if self.deal_type == "single"
+      self.keywords = self.slug.split("-")
+    end
+  end
 end
