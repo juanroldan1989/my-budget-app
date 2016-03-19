@@ -2,13 +2,13 @@
   <a href="/deals/<%= deal.slug %>" data-transition="slide">
     <img src="<%= deal.image_urls.first %>" class="listing">
     <h2>
-      <%= deal.title %>
+      <%= deal.title.html_safe %>
     </h2>
     <p>
       <% if deal.price.to_i > 0 %>
         <b>$<%= deal.price %></b>
       <% else %>
-        <b><%= deal.price_text.first %></b>
+        <b><%= deal.price_text.first.html_safe %></b>
       <% end %>
     </p>
   </a>

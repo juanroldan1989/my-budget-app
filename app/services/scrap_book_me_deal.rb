@@ -15,7 +15,7 @@ class ScrapBookMeDeal
   def call
     {
       title:       page.css(".activityWrapper h2").text,
-      description: sanitize_description,
+      description: [sanitize_description],
       deal_type:   "single",
       price_text:  [sanitize_price_text],
       price:       sanitize_price,

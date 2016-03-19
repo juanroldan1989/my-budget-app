@@ -16,7 +16,7 @@ namespace :deals do
           if first_deal.present? && second_deal.present?
             Deal.create(
               title:       "#{first_deal.title} & #{second_deal.title}",
-              description: "#{first_deal.description}. #{second_deal.description}",
+              description: (first_deal.description + second_deal.description),
               deal_type:   "combined",
               min_price:   first_deal.min_price < second_deal.min_price ? first_deal.min_price : second_deal.min_price,
               max_price:   first_deal.max_price < second_deal.max_price ? first_deal.max_price : second_deal.min_price,
@@ -45,7 +45,7 @@ namespace :deals do
           if first_deal.present? && second_deal.present?
             Deal.create(
               title:       "#{first_deal.title} & #{second_deal.title}",
-              description: "#{first_deal.description}. #{second_deal.description}",
+              description: (first_deal.description + second_deal.description),
               deal_type:   "combined",
               min_price:   first_deal.min_price < second_deal.min_price ? first_deal.min_price : second_deal.min_price,
               max_price:   first_deal.max_price < second_deal.max_price ? first_deal.max_price : second_deal.min_price,
@@ -74,7 +74,7 @@ namespace :deals do
           if first_deal.present? && second_deal.present?
             Deal.create(
               title:       "#{first_deal.title} & #{second_deal.title}",
-              description: "#{first_deal.description}. #{second_deal.description}",
+              description: (first_deal.description + second_deal.description),
               deal_type:   "combined",
               min_price:   first_deal.min_price < second_deal.min_price ? first_deal.min_price : second_deal.min_price,
               max_price:   first_deal.max_price < second_deal.max_price ? first_deal.max_price : second_deal.min_price,
