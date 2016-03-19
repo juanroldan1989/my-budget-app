@@ -11,43 +11,10 @@
     <ul data-role="listview" data-inset="false">
 
       <li data-role="list-divider" data-theme="b">Single Deals</li>
-      <% single_deals.each do |single| %>
-        <li>
-          <a href="/deals/<%= single.slug %>" data-transition="slide">
-            <img src="<%= single.image_urls.first %>" class="listing">
-            <h2>
-              <%= single.title %>
-            </h2>
-            <p>
-              <% if single.price.to_i > 0 %>
-                <b>$<%= single.price %></b>
-              <% else %>
-                <b><%= single.price_text.first %></b>
-              <% end %>
-            </p>
-          </a>
-        </li>
-      <% end %>
+      <%= render partial: single_deals %>
 
       <li data-role="list-divider" data-theme="b">Combined Deals</li>
-      <% combined_deals.each do |combined| %>
-        <li>
-          <a href="/deals/<%= combined.slug %>" data-transition="slide">
-            <img src="<%= combined.image_urls.first %>" class="listing">
-            <h2>
-              <%= combined.title %>
-            </h2>
-            <p>
-              <% if combined.price.to_i > 0 %>
-                <b>$<%= combined.price %></b>
-              <% else %>
-                <b><%= combined.price_text.first %></b>
-              <% end %>
-            </p>
-          </a>
-        </li>
-      <% end %>
-
+      <%= render partial: combined_deals %>
     </ul>
 
   </div><!-- /content -->

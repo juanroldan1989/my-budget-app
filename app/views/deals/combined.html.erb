@@ -7,23 +7,7 @@
   <div role="main" class="ui-content jqm-content jqm-fullwidth">
 
     <ul data-role="listview" data-inset="false">
-      <% combined_deals.each do |combined| %>
-        <li>
-          <a href="/deals/<%= combined.id %>" data-transition="slide">
-            <img src="<%= combined.image_urls.first %>" class="listing">
-            <h2>
-              <%= combined.title %>
-            </h2>
-            <p>
-              <% if combined.price.to_i > 0 %>
-                <b>$<%= combined.price %></b>
-              <% else %>
-                <b><%= combined.price_text.first %></b>
-              <% end %>
-            </p>
-          </a>
-        </li>
-      <% end %>
+      <%= render partial: combined_deals %>
     </ul>
 
   </div><!-- /content -->

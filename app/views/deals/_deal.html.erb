@@ -1,0 +1,15 @@
+<li>
+  <a href="/deals/<%= deal.slug %>" data-transition="slide">
+    <img src="<%= deal.image_urls.first %>" class="listing">
+    <h2>
+      <%= deal.title %>
+    </h2>
+    <p>
+      <% if deal.price.to_i > 0 %>
+        <b>$<%= deal.price %></b>
+      <% else %>
+        <b><%= deal.price_text.first %></b>
+      <% end %>
+    </p>
+  </a>
+</li>
