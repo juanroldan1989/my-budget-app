@@ -4,3 +4,7 @@ img.listing {
     bottom:0;
     margin:auto;
 }
+
+img.show {
+  width: 100%;
+}

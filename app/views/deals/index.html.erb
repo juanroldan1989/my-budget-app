@@ -35,13 +35,15 @@
           <a href="/deals/<%= combined.slug %>" data-prefetch="true" data-transition="slide">
             <img src="<%= combined.image_urls.first %>" class="listing">
             <h2>
-              <% if combined.price.to_i > 0 %>
-                <b>$<%= combined.price %> - <%= combined.title %></b>
-              <% else %>
-                <b><%= combined.price_text.first %> - <%= combined.title %></b>
-              <% end %>
+              <%= combined.title %>
             </h2>
-            <p><%= combined.description %></p>
+            <p>
+              <% if combined.price.to_i > 0 %>
+                <b>$<%= combined.price %></b>
+              <% else %>
+                <b><%= combined.price_text.first %></b>
+              <% end %>
+            </p>
           </a>
         </li>
       <% end %>

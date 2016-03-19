@@ -5,7 +5,7 @@
 
 <div data-role="page" data-title="Deals in Auckland">
   <div role="main" class="ui-content jqm-content jqm-fullwidth">
-    <img src="<%= @deal.image_urls.first %>">
+    <img src="<%= @deal.image_urls.first %>" class="show">
     <h2>
       <% if @deal.price.to_i > 0 %>
         <b>$<%= @deal.price %> - <%= @deal.title %></b>
