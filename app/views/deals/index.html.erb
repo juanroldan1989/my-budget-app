@@ -4,18 +4,15 @@
 </div><!-- /header -->
 
 <div data-role="page" data-title="Deals in Auckland">
-  <div role="main" class="ui-content jqm-content jqm-fullwidth" style="margin:0.1em">
+  <div role="main" class="ui-content jqm-content jqm-fullwidth">
 
-    <fieldset data-role="controlgroup" data-type="horizontal" style="margin:0">
+    <fieldset data-role="controlgroup" data-type="horizontal">
       <input type="radio" name="price-radio" data-behavior="price-filter" id="price-radio-50" value="50">
       <label for="price-radio-50">$50</label>
-
       <input type="radio" name="price-radio" data-behavior="price-filter" id="price-radio-100" value="100">
       <label for="price-radio-100">$100</label>
-
       <input type="radio" name="price-radio" data-behavior="price-filter" id="price-radio-150" value="150">
       <label for="price-radio-150">$150</label>
-
       <input type="radio" name="price-radio" data-behavior="price-filter" id="price-radio-200" value="200">
       <label for="price-radio-200">$200</label>
     </fieldset>
@@ -32,8 +29,7 @@
     <br/>
 
     <ul id="results" data-role="listview" data-inset="false">
-      <%= render partial: single_deals %>
-      <%= render partial: combined_deals %>
+      <%= render partial: collection %>
     </ul>
 
   </div><!-- /content -->
