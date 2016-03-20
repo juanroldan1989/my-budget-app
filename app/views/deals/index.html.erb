@@ -3,37 +3,36 @@
     <h1>Home</h1>
 </div><!-- /header -->
 
-<!-- Retrieve tab's content via AJAX and prepend inside DOM (using loader.gif) -->
-
 <div data-role="page" data-title="Deals in Auckland">
   <div role="main" class="ui-content jqm-content jqm-fullwidth" style="margin:0.1em">
 
     <fieldset data-role="controlgroup" data-type="horizontal" style="margin:0">
-      <input type="radio" name="radio-choice-v-1" id="radio-choice-v-1a" value="on" checked="checked">
-      <label for="radio-choice-v-1a">$50</label>
-      <input type="radio" name="radio-choice-v-1" id="radio-choice-v-1b" value="off">
-      <label for="radio-choice-v-1b">$100</label>
-      <input type="radio" name="radio-choice-v-1" id="radio-choice-v-1c" value="other">
-      <label for="radio-choice-v-1c">$150</label>
-      <input type="radio" name="radio-choice-v-1" id="radio-choice-v-1d" value="other">
-      <label for="radio-choice-v-1d">$200</label>
+      <input type="radio" name="price-radio" data-behavior="price-filter" id="price-radio-50" value="50">
+      <label for="price-radio-50">$50</label>
+
+      <input type="radio" name="price-radio" data-behavior="price-filter" id="price-radio-100" value="100">
+      <label for="price-radio-100">$100</label>
+
+      <input type="radio" name="price-radio" data-behavior="price-filter" id="price-radio-150" value="150">
+      <label for="price-radio-150">$150</label>
+
+      <input type="radio" name="price-radio" data-behavior="price-filter" id="price-radio-200" value="200">
+      <label for="price-radio-200">$200</label>
     </fieldset>
 
     <fieldset data-role="controlgroup" style="margin:0">
-      <input type="checkbox" name="checkbox-v-1a" id="checkbox-v-1a">
-      <label for="checkbox-v-1a">Hotels & Tours</label>
-      <input type="checkbox" name="checkbox-v-1c" id="checkbox-v-1c">
-      <label for="checkbox-v-1c">Beaches & Fun</label>
-      <input type="checkbox" name="checkbox-v-1f" id="checkbox-v-1f">
-      <label for="checkbox-v-1f">Drinks & Food</label>
+      <input type="checkbox" data-behavior="keywords-filter" id="keywords_1" data-value="zoo">
+      <label for="keywords_1">Hotels & Tours</label>
+      <input type="checkbox" data-behavior="keywords-filter" id="keywords_2" data-value="organic">
+      <label for="keywords_2">Beaches & Fun</label>
+      <input type="checkbox" data-behavior="keywords-filter" id="keywords_3" data-value="drink">
+      <label for="keywords_3">Drinks & Food</label>
     </fieldset>
 
     <br/>
 
-    <ul data-role="listview" data-inset="false">
-      <li data-role="list-divider" data-theme="b">Single Deals</li>
+    <ul id="results" data-role="listview" data-inset="false">
       <%= render partial: single_deals %>
-      <li data-role="list-divider" data-theme="b">Combined Deals</li>
       <%= render partial: combined_deals %>
     </ul>
 
