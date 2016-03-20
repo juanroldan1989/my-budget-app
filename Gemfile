@@ -16,6 +16,7 @@ group :development do
 end
 
 group :production do
+  gem "rails_12factor",         "~> 0.0.3"
   gem "unicorn",                "~> 5.0.0"
 end
 
