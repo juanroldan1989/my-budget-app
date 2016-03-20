@@ -1,10 +1,10 @@
 class DealFilter
 
   # 50, 100, 150
-  def by_budget(budget)
-    logger.debug "*** by_budget: #{budget}"
+  def by_price(price)
+    logger.debug "*** by_price: #{price.to_i}"
 
-    use_scope :by_price_lower_than, budget.to_i
+    use_scope :by_price_lower_than, price.to_i
 
     self
   end
