@@ -12,7 +12,7 @@ class DealFilter
   def by_keywords(keywords)
     logger.debug "*** by_keywords: #{keywords}"
 
-    use_scope :keywords_search, keywords
+    use_scope :keywords_search, keywords_list(keywords)
 
     self
   end
@@ -51,6 +51,10 @@ class DealFilter
 
   def logger
     Rails.logger
+  end
+
+  def keywords_list(keys)
+    keys.collect { |key| Deal::KEYWORDS[key.to_sym] }.flatten.compact
   end
 
   def scope

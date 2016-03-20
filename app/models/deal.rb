@@ -1,4 +1,17 @@
 class Deal < ActiveRecord::Base
+
+  KEYWORDS = {
+    hotels_tours:
+    %w( hotel tour accommodation house lodge bed breakfast hostel apart
+        pension posada inn),
+    beaches_fun:
+    %w( beach fun seaside seashore shore coast seaboard water sand
+        party night club),
+    drinks_food:
+    %w( drink food alcohol tipple bottle booze beer pizza bar eat cocktail
+        cook baking bake cuisine refreshment meal ration store meat)
+  }
+
   extend FriendlyId
     friendly_id :title, use: [:slugged, :finders] # you can now do MyClass.find('bar')
 
