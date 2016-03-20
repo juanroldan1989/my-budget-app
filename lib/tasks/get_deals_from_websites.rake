@@ -3,7 +3,11 @@ namespace :get do
     task websites: :environment do
       puts "*** Retrieving deals from www.bookme.co.nz ..."
 
-      service = ScrapBookMe.new
+      # Scenario 1: BookMe site displays all listing items at once
+      # service = ScrapBookMe.new
+
+      # Scenario 2: BookMe site displays all listing by lazy loading
+      service = ScrapBookMeLazyLoad.new
       results = service.results
 
       puts "*** #{results.size} deals retrieved ! :D"
