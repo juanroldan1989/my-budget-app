@@ -3,7 +3,7 @@ namespace :deals do
     task testing: :environment do
       puts "*** Setting up testing deals..."
 
-      50.times do |deal|
+      250.times do |deal|
         Deal.create(
           title:       Faker::Commerce.product_name,
           description: [Faker::Lorem.paragraph(2)],
