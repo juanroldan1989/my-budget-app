@@ -26,10 +26,11 @@ class Deal < ActiveRecord::Base
 
   # if populating "keywords" field is too complicated, use this approach:
   # https://github.com/Casecommons/pg_search#tsearch-full-text-search
+  # https://github.com/Casecommons/pg_search#any_word
   pg_search_scope :keywords_search, against: :keywords,
                     using: {
                       tsearch: {
-                        prefix: true, dictionary: "english"
+                        prefix: true, dictionary: "english", any_word: true
                       }
                     }
 
