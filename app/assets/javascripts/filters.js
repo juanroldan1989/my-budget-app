@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  $("#loader").loader();
+
   keywords_filter();
   price_filter();
 });
@@ -6,9 +8,9 @@ $(document).ready(function(){
 function ajax_filter() {
   var hash = { price: get_price(), keywords: get_keywords() };
 
-  console.log(hash);
+  // console.log(hash);
 
-  $("#loader").show();
+  $("#loader").loader("show");
 
   $.ajax({
     type    : "GET",
@@ -21,7 +23,7 @@ function ajax_filter() {
       $("ul#results").html("");
       $("ul#results").html(data);
       $("ul#results").listview("refresh");
-      $("#loader").hide();
+      $("#loader").loader("hide");
     }
   });
 }
