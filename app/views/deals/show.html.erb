@@ -6,13 +6,15 @@
 <div data-role="page" data-title="Deals in Auckland">
   <div role="main" class="ui-content jqm-content jqm-fullwidth">
 
-    <h2>
+    <h4>
       <% if @deal.price.to_i > 0 %>
-        <b>$<%= @deal.price %> - <%= @deal.title.html_safe %></b>
+        <i>$<%= @deal.price %></i>
       <% else %>
-        <b><%= @deal.price_text[0].html_safe %> - <%= @deal.title.html_safe %></b>
+        <i><%= @deal.price_text[0].html_safe %></i>
       <% end %>
-    </h2>
+
+      - <%= @deal.title.html_safe %>
+    </h4>
 
     <img src="<%= @deal.image_urls[0] %>" class="show">
     <p><%= @deal.description[0] %></p>
