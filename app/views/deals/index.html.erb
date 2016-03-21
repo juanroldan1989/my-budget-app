@@ -28,6 +28,10 @@
 
     <br/>
 
+    <div id="loader" class="ui-loader ui-corner-all ui-body-a ui-loader-default custom-loader">
+      <%= image_tag "ajax-loader.gif" %>
+    </div>
+
     <ul id="results" data-role="listview" data-inset="false">
       <%= render partial: collection %>
     </ul>

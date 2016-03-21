@@ -8,6 +8,8 @@ function ajax_filter() {
 
   console.log(hash);
 
+  $("#loader").show();
+
   $.ajax({
     type    : "GET",
     beforeSend: function(xhr){
@@ -19,6 +21,7 @@ function ajax_filter() {
       $("ul#results").html("");
       $("ul#results").html(data);
       $("ul#results").listview("refresh");
+      $("#loader").hide();
     }
   });
 }

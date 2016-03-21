@@ -8,3 +8,8 @@ img.listing {
 img.show {
   width: 100%;
 }
+
+.custom-loader {
+  top:65%;
+  display:none;
+}
