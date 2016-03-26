@@ -7,8 +7,6 @@ class DealsController < ApplicationController
   has_scope :by_sort,     as: :sort_by
 
   helper_method :collection
-  helper_method :combined_deals
-  helper_method :single_deals
 
   def index
   end
@@ -29,15 +27,5 @@ class DealsController < ApplicationController
 
   def deal_filter
     @deal_filter ||= apply_scopes(DealFilter.new.by_sort("price"))
-  end
-
-  def single_deals
-    @single_deals ||=
-      DealFilter.new.by_type("single").by_sort("price").results
-  end
-
-  def combined_deals
-    @combined_deals ||=
-      DealFilter.new.by_type("combined").by_sort("price").results
   end
 end
