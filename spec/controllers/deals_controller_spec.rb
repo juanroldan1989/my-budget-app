@@ -86,6 +86,26 @@ RSpec.describe DealsController do
         expect(subject.send(:collection).to_a).to eq [@deal_3]
       end
     end
-
   end
+
+  describe "GET #show" do
+    before(:each) do
+      @deal = create(:deal)
+      get :show, id: @deal.id
+    end
+
+    it "responds successfully with an HTTP 200 status code" do
+      expect(response).to be_success
+      expect(response).to have_http_status(200)
+    end
+
+    it "renders the show template" do
+      expect(response).to render_template("show")
+    end
+
+    it "loads deal into @deal" do
+      expect(assigns(:deal)).to eq @deal
+    end
+  end
+
 end
