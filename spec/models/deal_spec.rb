@@ -69,3 +69,19 @@ RSpec.describe Deal, ".by_type" do
     expect(Deal.by_type("combined")).to eq [deal_2]
   end
 end
+
+RSpec.describe Deal, "#is_combined?" do
+  describe "defines if a deal is combined or not" do
+    it "returns 'true' when deal is 'combined'" do
+      combined_deal = create(:deal, deal_type: "combined")
+
+      expect(combined_deal.is_combined?).to eq true
+    end
+
+    it "returns 'false' when deal is 'simple'" do
+      single_deal = create(:deal, deal_type: "single")
+
+      expect(single_deal.is_combined?).to eq false
+    end
+  end
+end
