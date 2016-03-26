@@ -86,6 +86,22 @@ RSpec.describe Deal, "#is_combined?" do
   end
 end
 
+RSpec.describe Deal, "#normalize_friendly_id" do
+  describe "it restricts Deal's slug to 40 characters tops" do
+    it "applies for deals with titles longer than 40 characters" do
+      deal = create(:deal, title: "title with really really more than 40 characters")
+
+      expect(deal.slug.length).to eq 40
+    end
+
+    it "does not apply for deals with titles shorter than 40 characters" do
+      deal = create(:deal, title: "title with less than 40 characters")
+
+      expect(deal.slug.length).to eq 34
+    end
+  end
+end
+
 RSpec.describe Deal, "before_save method: set_keywords" do
   it "sets 'keywords' field based on the 'slug' field when creating a 'single' deal" do
     deal = create(:deal, title: "This is a nice deal", deal_type: "single")
