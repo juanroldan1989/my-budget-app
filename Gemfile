@@ -15,8 +15,9 @@ group :development do
   gem "foreman",                "~> 0.78.0"
 end
 
-group :test do
+group :development, :test do
   gem "rspec-rails",            "~> 3.4.2"
+  gem "shoulda-matchers",       "~> 3.1.1"
 end
 
 group :production do
