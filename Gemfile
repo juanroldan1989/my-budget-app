@@ -15,6 +15,10 @@ group :development do
   gem "foreman",                "~> 0.78.0"
 end
 
+group :test do
+  gem "rspec-rails",            "~> 3.4.2"
+end
+
 group :production do
   gem "rails_12factor",         "~> 0.0.3"
   gem "unicorn",                "~> 5.0.0"
