@@ -51,22 +51,22 @@ RSpec.describe Deal, ".by_price_lower_than" do
 end
 
 RSpec.describe Deal, ".by_type" do
-  it "returns deals: filtered by type ('single')" do
-    deal_1 = create(:deal, title: "Deal 10", deal_type: "single")
-    deal_2 = create(:deal, title: "Deal 5",  deal_type: "combined")
-    deal_3 = create(:deal, title: "Deal 1",  deal_type: "single")
+  describe "returns deals filtered by type"do
+    it "returns 'single' deals" do
+      deal_1 = create(:deal, title: "Deal 10", deal_type: "single")
+      deal_2 = create(:deal, title: "Deal 5",  deal_type: "combined")
+      deal_3 = create(:deal, title: "Deal 1",  deal_type: "single")
 
-    expect(Deal.by_type("single")).to eq [deal_3, deal_1]
-  end
-end
+      expect(Deal.by_type("single")).to eq [deal_3, deal_1]
+    end
 
-RSpec.describe Deal, ".by_type" do
-  it "returns deals: filtered by type ('combined')" do
-    deal_1 = create(:deal, title: "Deal 10", deal_type: "single")
-    deal_2 = create(:deal, title: "Deal 5",  deal_type: "combined")
-    deal_3 = create(:deal, title: "Deal 1",  deal_type: "single")
+    it "returns 'combined' deals" do
+      deal_1 = create(:deal, title: "Deal 10", deal_type: "single")
+      deal_2 = create(:deal, title: "Deal 5",  deal_type: "combined")
+      deal_3 = create(:deal, title: "Deal 1",  deal_type: "single")
 
-    expect(Deal.by_type("combined")).to eq [deal_2]
+      expect(Deal.by_type("combined")).to eq [deal_2]
+    end
   end
 end
 
