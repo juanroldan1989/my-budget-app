@@ -13,12 +13,6 @@ class DealsController < ApplicationController
   def index
   end
 
-  def single
-  end
-
-  def combined
-  end
-
   def show
     @deal = Deal.find params[:id]
   end
