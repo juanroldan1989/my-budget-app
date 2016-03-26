@@ -109,3 +109,17 @@ RSpec.describe Deal, "before_save method: set_keywords" do
     expect(deal.keywords).to eq ["this", "is", "a", "nice", "deal"]
   end
 end
+
+# PgSearch scopes #
+RSpec.describe Deal, ".title_search" do
+  it "returns deals with titles matching all words searched by" do
+    deal_1 = create(:deal, title: "Amazing deal with adventure")
+    deal_2 = create(:deal, title: "Amazing deal with adventure and fun")
+    deal_3 = create(:deal, title: "Amazing deal with adventure and fun and races")
+
+    expect(Deal.title_search("adventure")).to                   eq [deal_1, deal_2, deal_3]
+    expect(Deal.title_search("adventure and fun")).to           eq [deal_2, deal_3]
+    expect(Deal.title_search("adventure and fun and races")).to eq [deal_3]
+  end
+end
+# PgSearch scopes #
