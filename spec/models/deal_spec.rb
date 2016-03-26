@@ -112,7 +112,7 @@ end
 
 # PgSearch scopes #
 RSpec.describe Deal, ".title_search" do
-  it "returns deals with titles matching all words searched by" do
+  it "returns deals with titles matching ALL words searched by ('AND' behavior)" do
     deal_1 = create(:deal, title: "Amazing deal with adventure")
     deal_2 = create(:deal, title: "Amazing deal with adventure and fun")
     deal_3 = create(:deal, title: "Amazing deal with adventure and fun and races")
@@ -120,6 +120,19 @@ RSpec.describe Deal, ".title_search" do
     expect(Deal.title_search("adventure")).to                   eq [deal_1, deal_2, deal_3]
     expect(Deal.title_search("adventure and fun")).to           eq [deal_2, deal_3]
     expect(Deal.title_search("adventure and fun and races")).to eq [deal_3]
+  end
+end
+
+RSpec.describe Deal, ".keywords_search" do
+  it "returns deals with keywords matching ANY words searched by ('OR' behavior)" do
+    deal_1 = create(:deal, title: "Perfect deal with adventure", deal_type: "single")
+    deal_2 = create(:deal, title: "Best deal with adventure and fun", deal_type: "single")
+    deal_3 = create(:deal, title: "Amazing deal with adventure and fun and races", deal_type: "single")
+
+    expect(Deal.keywords_search(["perfect"]).to_a).to                    eq [deal_1]
+    expect(Deal.keywords_search(["perfect", "best"]).to_a).to            eq [deal_1, deal_2]
+    expect(Deal.keywords_search(["perfect", "fun"]).to_a).to             eq [deal_1, deal_2, deal_3]
+    expect(Deal.keywords_search(["perfect", "best", "amazing"]).to_a).to eq [deal_1, deal_2, deal_3]
   end
 end
 # PgSearch scopes #
