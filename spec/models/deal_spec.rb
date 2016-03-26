@@ -85,3 +85,11 @@ RSpec.describe Deal, "#is_combined?" do
     end
   end
 end
+
+RSpec.describe Deal, "before_save method: set_keywords" do
+  it "sets 'keywords' field based on the 'slug' field when creating a 'single' deal" do
+    deal = create(:deal, title: "This is a nice deal", deal_type: "single")
+
+    expect(deal.keywords).to eq ["this", "is", "a", "nice", "deal"]
+  end
+end
