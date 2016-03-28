@@ -48,7 +48,7 @@ RSpec.describe DealsController do
       expect(response).to have_http_status(200)
     end
 
-    it "renders the index template" do
+    it "renders the 'deals' partial" do
       get :filter
       expect(response).to render_template("deals/_deal")
     end
