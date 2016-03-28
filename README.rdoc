@@ -3,26 +3,13 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+<b>Local Development</b>
+* <code>git clone git@github.com:juanroldan1989/my-budget-app.git</code>
+* <code>bundle install</code>
+* <code>rake db:create db:migrate db:test:prepare</code>
+* Import deals from bookme.co.nz: <code>rake get:deals:websites</code>
+* Combine deals by price: <code>rake deals:set:combined</code>
+* <code>rspec spec</code>
+* <code>foreman start</code>
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Live app http://my-budget-in-auckland.herokuapp.com
