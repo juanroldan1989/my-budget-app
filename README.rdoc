@@ -1,3 +1,5 @@
+{<img src="https://codeclimate.com/github/juanroldan1989/my-budget-app/badges/gpa.svg" />}[https://codeclimate.com/github/juanroldan1989/my-budget-app]
+
 == Finding deals in Auckland
 
 Responsive web application built to look out single/combined deals in Auckland, filtering them by Price and Keywords ("tours", "hotels", "food", "drinks", "beaches" and "fun").
