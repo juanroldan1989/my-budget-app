@@ -1,12 +1,13 @@
 require "rails_helper"
 
 RSpec.describe ApplicationHelper do
+  # 'helper' is an instance of ActionView::Base configured with the
+  # EventsHelper and all of Rails' built-in helpers
+
   describe "#deal_price_text" do
     describe "displays Deal's price with the right format" do
       it "when deal has a price set" do
         deal = create(:deal, price: 10)
-        # helper is an instance of ActionView::Base configured with the
-        # EventsHelper and all of Rails' built-in helpers
         expect(helper.deal_price_text(deal)).to eq "<b>Single deal for $10.0</b>"
       end
 
@@ -16,4 +17,5 @@ RSpec.describe ApplicationHelper do
       end
     end
   end
+
 end
