@@ -11,4 +11,10 @@ Responsive web application built to look out single/combined deals in Auckland, 
 * <code>rspec spec</code>
 * <code>foreman start</code>
 
+<b>Work in progress</b>
+* Fetch data from http://www.eventfinda.co.nz/lifestyle/events/auckland
+* Save events/deals associating them with their locations (coordinates or location's name)
+* Lookout for a GoogleMap's plugin to retrieve coordinates/names of locations based on user pinpointing in the map.
+* Use selected locations and suroundings to retrieve events/deals.
+
 Live app http://my-budget-in-auckland.herokuapp.com
