@@ -2,14 +2,15 @@ source "https://rubygems.org"
 
 ruby "2.1.2"
 
-gem "sass-rails",               "~> 4.0.3"
-gem "uglifier",                 ">= 1.3.0"
-gem "jquery-rails",             "~> 3.1.4"
+gem "coveralls",                "~> 0.8.13"
 gem "faker",                    "~> 1.6.3"
 gem "friendly_id",              "~> 5.1.0"
 gem "has_scope",                "~> 0.6.0.rc"
+gem "jquery-rails",             "~> 3.1.4"
 gem "nokogiri",                 "~> 1.6.7.2"
 gem "rails",                    "~> 4.1.0"
+gem "sass-rails",               "~> 4.0.3"
+gem "uglifier",                 ">= 1.3.0"
 
 group :development do
   gem "foreman",                "~> 0.78.0"
