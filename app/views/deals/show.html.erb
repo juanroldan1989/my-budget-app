@@ -28,5 +28,37 @@
       <a href="<%= @deal.links[1] %>" class="ui-btn ui-icon-action ui-btn-icon-left ui-shadow ui-corner-all" target="blank">Check on website</a>
     <% end %>
 
+    <% if @deal.show_in_map? %>
+      <br/>
+      <div id="gmap" class="map"></div>
+
+      <script type="text/javascript">
+        var locations = [
+            {
+                lat: 45.9,
+                lon: 10.9,
+                title: 'Title A1',
+                html: '<h4>Content A1</h4>',
+                icon: 'http://maps.google.com/mapfiles/markerA.png',
+            },
+            {
+                lat: 54.9,
+                lon: 10.9,
+                title: 'Title B1',
+                html: '<h3>Content B1</h3>',
+                icon: 'http://maps.google.com/mapfiles/markerB.png',
+            }
+        ];
+
+        $(function() {
+            new Maplace({
+                show_markers: true,
+                locations: locations
+            }).Load();
+        });
+      </script>
+    <% end %>
+
   </div>
+
 </div>
