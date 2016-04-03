@@ -1,0 +1,14 @@
+development: &development
+
+  #EventFinda
+  finda_user_name: "username"
+  finda_password:  "123123123"
+
+test:
+  <<: *development
+
+production:
+
+  #EventFinda
+  finda_user_name: "username"
+  finda_password:  "123123123"
