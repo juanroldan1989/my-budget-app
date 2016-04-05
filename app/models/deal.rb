@@ -54,6 +54,10 @@ class Deal < ActiveRecord::Base
     super[0..39]
   end
 
+  def show_in_map?
+    location_lat.present? && location_long.present?
+  end
+
   private
 
   def set_keywords
