@@ -11,7 +11,7 @@ namespace :deals do
           min_price:   Faker::Number.between(1, 10),
           max_price:   Faker::Number.between(11, 50),
           price:       Faker::Number.between(1, 100),
-          price_text:  "Lovely price of $#{Faker::Number.between(1, 100)}",
+          price_text:  ["Lovely price of $#{Faker::Number.between(1, 100)}"],
           image_urls:  [Faker::Company.logo],
           links:       [Faker::Internet.url],
           keywords:    Faker::Hipster.words(8)
