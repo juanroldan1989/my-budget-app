@@ -5,10 +5,10 @@ module BookMe
 
     def initialize
       # Scenario 1: BookMe site displays all listing items at once
-      # service = ScrapBookMe.new
+      # service = ScrapSite.new
 
-      # Scenario 2: BookMe site displays all listing by lazy loading
-      @results = ScrapBookMeLazyLoad.new.results
+      # Scenario 2: BookMe site displays all listing by lazy loading each page
+      @results = ScrapSiteLazyLoad.new.results
     end
 
     def call
