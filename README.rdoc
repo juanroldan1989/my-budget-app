@@ -16,7 +16,7 @@ Responsive web application built to look out single/combined deals in Auckland, 
 ---------------------------------------------------------------
 
 <b>Work in progress</b>
-* Display deal's locations within Deal page.
+* Display deal's locations within Deal page: https://jsfiddle.net/_tomorro/yhrmL5zz/
 
 ---------------------------------------------------------------
 
