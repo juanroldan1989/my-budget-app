@@ -10,6 +10,12 @@
   <%= javascript_include_tag "application" %>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjaNbewmn6W0DFUT84jM5LGJyWKoIBb_A&libraries=geometry&v=3.22"></script>
   <%= csrf_meta_tags %>
+
+  <script>
+    $(function() {
+      $( "[data-role='header']" ).toolbar();
+    });
+  </script>
 </head>
 <body>
 
