@@ -1,4 +1,4 @@
-<div align="center">
+<div align="left">
   <a href="https://github.com/juanroldan1989/my-budget-app"><img width="450" src="https://github.com/juanroldan1989/my-budget-app/raw/master/app/assets/images/auckland.jpg" alt="eventfinda ruby logo" /></a>
 </div>
 
@@ -8,7 +8,7 @@
 [![Build Status](https://travis-ci.org/juanroldan1989/my-budget-app.svg?branch=master)](https://travis-ci.org/juanroldan1989/my-budget-app)
 [![Coverage Status](https://coveralls.io/repos/github/juanroldan1989/my-budget-app/badge.svg?branch=master)](https://coveralls.io/github/juanroldan1989/my-budget-app?branch=master)
 
-Responsive web application built to look out single/combined deals in Auckland, filtering them by Price and Keywords ("tours", "hotels", "food", "drinks", "beaches" and "fun").
+Responsive web application built to look out single/combined deals in Auckland, importing deals/events from BookMe and EventFinda websites and filtering them by Price and Keywords ("tours", "hotels", "food", "drinks", "beaches" and "fun").
 
 ### 1. Development
 
@@ -27,11 +27,20 @@ Setup DB:
 rake db:create db:migrate db:test:prepare
 ```
 
-Import deals from http://bookme.co.nz and http://www.eventfinda.co.nz:
+Importing deals from http://www.eventfinda.co.nz requires for a developer account (free) first: http://www.eventfinda.co.nz/api/v2/index
+
+Then run this task:
 
 ```
 rake get:deals:websites
 ```
+
+Import deals from http://bookme.co.nz:
+
+```
+rake get:deals:websites
+```
+
 
 Combine deals by price:
 ```
@@ -50,6 +59,7 @@ foreman start
 ```
 
 ### 2. Work in progress
+
 * Display deal's locations within Deal page: https://jsfiddle.net/_tomorro/yhrmL5zz/
 
 ### 3. Q&A
