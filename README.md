@@ -69,6 +69,5 @@ Questions or problems? Please post them on the [issue tracker](https://github.co
 
 ### 4. Live app
 
-```
 http://my-budget-in-auckland.herokuapp.com
-```
+
