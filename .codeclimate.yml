@@ -1,8 +1,6 @@
 languages:
   Ruby: true
   JavaScript: true
-  PHP: true
-  Python: true
 exclude_paths:
 - "app/assets/javascripts/jquery.mobile-1.4.5.min.js"
 - "app/assets/javascripts/maplace.js"
