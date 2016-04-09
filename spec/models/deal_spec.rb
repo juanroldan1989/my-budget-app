@@ -35,6 +35,7 @@ RSpec.describe Deal, ".by_price_higher_than" do
     deal_3 = create(:deal, title: "Deal 1",  price: 1)
 
     expect(Deal.by_price_higher_than(x)).to eq [deal_1,deal_2]
+    expect(Deal.by_price_higher_than(x)).not_to include(deal_3)
   end
 end
 
@@ -47,6 +48,7 @@ RSpec.describe Deal, ".by_price_lower_than" do
     deal_3 = create(:deal, title: "Deal 1",  price: 1)
 
     expect(Deal.by_price_lower_than(x)).to eq [deal_2, deal_3]
+    expect(Deal.by_price_lower_than(x)).not_to include deal_1
   end
 end
 
@@ -58,6 +60,7 @@ RSpec.describe Deal, ".by_type" do
       deal_3 = create(:deal, title: "Deal 1",  deal_type: "single")
 
       expect(Deal.by_type("single")).to eq [deal_3, deal_1]
+      expect(Deal.by_type("single")).not_to include deal_2
     end
 
     it "returns 'combined' deals" do
@@ -66,6 +69,7 @@ RSpec.describe Deal, ".by_type" do
       deal_3 = create(:deal, title: "Deal 1",  deal_type: "single")
 
       expect(Deal.by_type("combined")).to eq [deal_2]
+      expect(Deal.by_type("combined")).not_to include [deal_1, deal_3]
     end
   end
 end
