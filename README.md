@@ -27,22 +27,28 @@ Setup DB:
 rake db:create db:migrate db:test:prepare
 ```
 
+Import deals from http://bookme.co.nz:
+
+```
+rake get:deals:from:book_me
+```
+
 Importing deals from http://www.eventfinda.co.nz requires for a developer account (free) first: http://www.eventfinda.co.nz/api/v2/index
+
+Setup credentials into `config/application.yml` file:
+
+```
+cp config/application.sample.yml config/application.yml
+```
 
 Then run this task:
 
 ```
-rake get:deals:websites
+rake get:deals:from:event_finda
 ```
-
-Import deals from http://bookme.co.nz:
-
-```
-rake get:deals:websites
-```
-
 
 Combine deals by price:
+
 ```
 rake deals:set:combined
 ```
@@ -64,7 +70,7 @@ foreman start
 
 ### 3. Q&A
 
-Questions or problems? Please post them on the [issue tracker](https://github.com/juanroldan1989/my-budget-app/github/issues). You can contribute changes by forking the project and submitting a pull request. You can ensure the tests are passing by running `rspec spec`.
+Questions or problems? Please post them on the [issue tracker](https://github.com/juanroldan1989/my-budget-app/issues). You can contribute changes by forking the project and submitting a pull request. You can ensure the tests are passing by running `rspec spec`.
 
 
 ### 4. Live app

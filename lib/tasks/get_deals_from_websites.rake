@@ -1,22 +1,25 @@
 namespace :get do
   namespace :deals do
-    task websites: :environment do
-      puts "*** Retrieving deals from www.bookme.co.nz ..."
+    namespace :from do
+      task book_me: :environment do
+        puts "*** Retrieving deals from www.bookme.co.nz ..."
 
-      service = BookMe::PersistDeals.new
-      service.call
+        service = BookMe::PersistDeals.new
+        service.call
 
-      puts "*** *** Done!"
-      puts
+        puts "*** *** Done!"
+        puts
+      end
 
-      puts "*** Retrieving deals from www.eventfinda.co.nz ..."
+      task event_finda: :environment do
+        puts "*** Retrieving deals from www.eventfinda.co.nz ..."
 
-      service = EventFinda::PersistDeals.new
-      service.call
+        service = EventFinda::PersistDeals.new
+        service.call
 
-      puts "*** *** Done!"
-      puts
-
+        puts "*** *** Done!"
+        puts
+      end
     end
   end
 end
