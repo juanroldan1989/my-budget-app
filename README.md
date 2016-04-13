@@ -27,7 +27,7 @@ Setup DB:
 rake db:create db:migrate db:test:prepare
 ```
 
-Import deals from http://bookme.co.nz:
+Import deals from http://bookme.co.nz (via scrapping, there's no API available):
 
 ```
 rake get:deals:from:book_me
