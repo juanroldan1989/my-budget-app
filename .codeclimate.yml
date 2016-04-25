@@ -4,3 +4,4 @@ languages:
 exclude_paths:
 - "app/assets/javascripts/jquery.mobile-1.4.5.min.js"
 - "app/assets/javascripts/maplace.js"
+- "Gemfile.lock"
