@@ -3,6 +3,7 @@ source "https://rubygems.org"
 ruby "2.1.2"
 
 gem "coveralls",                "~> 0.8.13"
+gem "event_finda_ruby",         "~> 0.3.1"
 gem "faker",                    "~> 1.6.3"
 gem "figaro",                   "~> 1.1.1"
 gem "friendly_id",              "~> 5.1.0"

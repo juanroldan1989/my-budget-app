@@ -38,6 +38,8 @@ GEM
     diff-lcs (1.2.5)
     docile (1.1.5)
     erubis (2.7.0)
+    event_finda_ruby (0.3.1)
+      httparty (~> 0.13.7)
     execjs (2.6.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -169,6 +171,7 @@ PLATFORMS
 
 DEPENDENCIES
   coveralls (~> 0.8.13)
+  event_finda_ruby (~> 0.3.1)
   factory_girl_rails (~> 4.6.0)
   faker (~> 1.6.3)
   figaro (~> 1.1.1)
