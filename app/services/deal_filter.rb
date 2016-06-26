@@ -1,5 +1,12 @@
 class DealFilter
 
+  CACHE_EXPIRE  = 1.hour
+  CACHE_VERSION = "v1".freeze
+
+  def initialize
+    @scopes_applied = []
+  end
+
   # 50, 100, 150
   def by_price(price)
     logger.debug "*** by_price: #{price.to_i}"
@@ -40,13 +47,21 @@ class DealFilter
   end
 
   def results
-    scope.all
+    logger.debug "*** cache_key: #{cache_key}"
+
+    Rails.cache.fetch(cache_key, expires_in: CACHE_EXPIRE) do
+      scope.all
+    end
   end
 
   private
 
   def base_scope
     Deal
+  end
+
+  def cache_key
+    @cache_key ||= "/#{CACHE_VERSION}/deals/#{@scopes_applied.join('/')}"
   end
 
   def logger
@@ -62,6 +77,8 @@ class DealFilter
   end
 
   def use_scope(key, *args)
+    @scopes_applied.push("#{key}/#{args.join('/').size}")
+
     @scope = scope.send(key, *args)
   end
 end
