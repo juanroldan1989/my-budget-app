@@ -16,7 +16,7 @@ class DealsController < ApplicationController
   end
 
   def filter
-    render partial: deal_filter.results
+    render partial: collection
   end
 
   private
