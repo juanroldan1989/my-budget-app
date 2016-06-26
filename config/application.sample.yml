@@ -4,6 +4,9 @@ development: &development
   finda_user_name: "username"
   finda_password:  "123123123"
 
+  #Redis
+  redis_url:       "redis://localhost:6379/0"
+
 test:
   <<: *development
 
@@ -12,3 +15,6 @@ production:
   #EventFinda
   finda_user_name: "username"
   finda_password:  "123123123"
+
+  #Redis
+  redis_url:       "redis://localhost:6379/0"
