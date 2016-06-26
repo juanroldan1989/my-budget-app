@@ -1,5 +1,5 @@
 <div align="left">
-  <a href="https://github.com/juanroldan1989/my-budget-app"><img width="450" src="https://github.com/juanroldan1989/my-budget-app/raw/master/app/assets/images/auckland.jpg" alt="eventfinda ruby logo" /></a>
+  <a href="https://github.com/juanroldan1989/my-budget-app"><img width="450" src="https://github.com/juanroldan1989/my-budget-app/raw/master/app/assets/images/auckland.jpg" alt="my budget app logo" /></a>
 </div>
 
 # Finding deals in Auckland
@@ -76,4 +76,6 @@ Questions or problems? Please post them on the [issue tracker](https://github.co
 ### 4. Live app
 
 http://my-budget-in-auckland.herokuapp.com
+
+<img width="450" src="https://github.com/juanroldan1989/my-budget-app/raw/master/app/assets/images/screenshot.png" alt="my budget app logo" /></a>
 
