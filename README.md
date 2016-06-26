@@ -8,7 +8,10 @@
 [![Build Status](https://travis-ci.org/juanroldan1989/my-budget-app.svg?branch=master)](https://travis-ci.org/juanroldan1989/my-budget-app)
 [![Coverage Status](https://coveralls.io/repos/github/juanroldan1989/my-budget-app/badge.svg?branch=master)](https://coveralls.io/github/juanroldan1989/my-budget-app?branch=master)
 
-Responsive web application built to look out single/combined deals in Auckland, importing deals/events from BookMe and EventFinda websites and filtering them by Price and Keywords ("tours", "hotels", "food", "drinks", "beaches" and "fun").
+- Responsive web application built to look out single/combined deals in Auckland.
+- Allows to importing deals/events from BookMe and EventFinda websites and
+- To filter events by Price and Keywords ("tours", "hotels", "food", "drinks", "beaches" and "fun").
+- Results returned from API cached within the application. Expiration time: 1 hour.
 
 ### 1. Development
 
@@ -64,6 +67,36 @@ Launch app:
 foreman start
 ```
 
+After setting up Redis and started filtering results, stored keys can be checked like this:
+
+```
+$ redis-cli
+127.0.0.1:6379> select "0"
+OK
+127.0.0.1:6379> keys **
+ 1) "/v1/deals/by_price/0/by_price_lower_than/2"
+ 2) "/v1/deals/by_price/0/keywords_search/82"
+ 3) "/v1/deals/by_price/0/by_price_lower_than/3/keywords_search/126"
+ 4) "/v1/deals/by_price/0/by_price_lower_than/2/keywords_search/209"
+ 5) "/v1/deals/by_price/0/keywords_search/75"
+ 6) "/v1/deals/by_price/0/by_price_lower_than/2/keywords_search/75"
+ 7) "/v1/deals/by_price/0/keywords_search/285"
+ 8) "/v1/deals/by_price/0/by_price_lower_than/3/keywords_search/82"
+ 9) "/v1/deals/by_price/0/by_price_lower_than/3/keywords_search/209"
+10) "/v1/deals/by_price/0/by_price_lower_than/3"
+11) "/v1/deals/by_price/0/by_price_lower_than/3/keywords_search/285"
+12) "/v1/deals/by_price/0/keywords_search/158"
+13) "/v1/deals/by_price/0/by_price_lower_than/2/keywords_search/285"
+14) "/v1/deals/by_price/0/by_price_lower_than/2/keywords_search/82"
+15) "/v1/deals/by_price/0/by_price_lower_than/2/keywords_search/158"
+16) "/v1/deals/by_price/0/by_price_lower_than/2/keywords_search/126"
+17) "/v1/deals/by_price/0"
+```
+
+Heroku's Redis addon displaying stored keys in live app:
+
+<img width="450" src="https://github.com/juanroldan1989/my-budget-app/raw/master/app/assets/images/redis.png" alt="my budget app redis" /></a>
+
 ### 2. Work in progress
 
 * Display deal's locations within Deal page: https://jsfiddle.net/_tomorro/yhrmL5zz/
@@ -78,4 +111,6 @@ Questions or problems? Please post them on the [issue tracker](https://github.co
 http://my-budget-in-auckland.herokuapp.com
 
 <img width="450" src="https://github.com/juanroldan1989/my-budget-app/raw/master/app/assets/images/screenshot.png" alt="my budget app logo" /></a>
+
+
 
