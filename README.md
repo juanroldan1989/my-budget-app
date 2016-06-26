@@ -41,7 +41,7 @@ Setup credentials into `config/application.yml` file:
 cp config/application.sample.yml config/application.yml
 ```
 
-Then run this task:
+Then run this task (thanks to the [event_finda_ruby](https://github.com/juanroldan1989/event_finda_ruby) gem):
 
 ```
 rake get:deals:from:event_finda
