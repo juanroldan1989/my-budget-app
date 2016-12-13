@@ -13,7 +13,7 @@
 - To filter events by Price and Keywords ("tours", "hotels", "food", "drinks", "beaches" and "fun").
 - Results returned from API cached within the application. Expiration time: 1 hour.
 
-### 1. Development
+## 1. Development
 
 Clone repository:
 ```
@@ -30,34 +30,32 @@ Setup DB:
 rake db:create db:migrate db:test:prepare
 ```
 
-Import deals from http://bookme.co.nz (via scrapping, there's no API available):
+### 1.1 Import deals from [BookMe.co.nz](http://bookme.co.nz):
+Scrapping events is the only way, there's no API available:
 
 ```
 rake get:deals:from:book_me
 ```
 
-Importing deals from http://www.eventfinda.co.nz requires for a developer account (free) first: http://www.eventfinda.co.nz/api/v2/index
+### 1.2 Import deals from [EventFinda.co.nz](http://www.eventfinda.co.nz):
+- Get a developer account (free) first: http://www.eventfinda.co.nz/api/v2/index
 
-Setup credentials into `config/application.yml` file:
-
+- Setup credentials into `config/application.yml` file:
 ```
 cp config/application.sample.yml config/application.yml
 ```
 
-Then run this task (thanks to the [event_finda_ruby](https://github.com/juanroldan1989/event_finda_ruby) gem):
-
+Run import task (implemented with [event_finda_ruby](https://github.com/juanroldan1989/event_finda_ruby) gem):
 ```
 rake get:deals:from:event_finda
 ```
-
-Combine deals by price:
-
+### 1.3 Combine deals from both websites
 ```
 rake deals:set:combined
 ```
 
+### 1.4 Starting up
 Validate test suite:
-
 ```
 rspec spec
 ```
@@ -67,7 +65,8 @@ Launch app:
 foreman start
 ```
 
-After setting up Redis and started filtering results, stored keys can be checked like this:
+### 1.5 Redis
+With [Redis setup](https://redis.io/topics/quickstart), start looking for events. Stored keys can be checked like this:
 
 ```
 $ redis-cli
@@ -97,20 +96,17 @@ Heroku's Redis addon displaying stored keys in live app:
 
 <img width="450" src="https://github.com/juanroldan1989/my-budget-app/raw/master/app/assets/images/redis.png" alt="my budget app redis" /></a>
 
-### 2. Work in progress
+## 2. Work in progress
 
 * Display deal's locations within Deal page: https://jsfiddle.net/_tomorro/yhrmL5zz/
 
-### 3. Q&A
+## 3. Q&A
 
 Questions or problems? Please post them on the [issue tracker](https://github.com/juanroldan1989/my-budget-app/issues). You can contribute changes by forking the project and submitting a pull request. You can ensure the tests are passing by running `rspec spec`.
 
 
-### 4. Live app
+## 4. Live app
 
 http://my-budget-in-auckland.herokuapp.com
 
 <img width="450" src="https://github.com/juanroldan1989/my-budget-app/raw/master/app/assets/images/screenshot.png" alt="my budget app logo" /></a>
-
-
-
