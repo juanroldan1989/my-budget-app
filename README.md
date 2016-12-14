@@ -9,7 +9,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/juanroldan1989/my-budget-app/badge.svg?branch=master)](https://coveralls.io/github/juanroldan1989/my-budget-app?branch=master)
 
 - Responsive web application built to look out single/combined deals in Auckland.
-- Allows to importing deals/events from BookMe and EventFinda websites and
+- Allows importing deals/events from BookMe and EventFinda websites.
 - To filter events by Price and Keywords ("tours", "hotels", "food", "drinks", "beaches" and "fun").
 - Results returned from API cached within the application. Expiration time: 1 hour.
 
@@ -66,7 +66,7 @@ foreman start
 ```
 
 ### 1.5 Redis
-With [Redis setup](https://redis.io/topics/quickstart), start looking for events. Stored keys can be checked like this:
+Having [Redis setup](https://redis.io/topics/quickstart), start looking for events. Stored keys can be checked like this:
 
 ```
 $ redis-cli
