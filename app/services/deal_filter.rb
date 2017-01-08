@@ -37,6 +37,15 @@ class DealFilter
     self
   end
 
+  # TODO
+  def by_start_date(start_date)
+    logger.debug "*** by_start_date: #{start_date}"
+
+    use_scope :by_start_date, start_date
+
+    self
+  end
+
   # single | combined
   def by_type(deal_type)
     logger.debug "*** by_type: #{deal_type}"

@@ -21,6 +21,7 @@ module BookMe
         if deal.valid?
           print "."
         else
+          # TODO: Title not retrieved properly, always nil
           puts "x: #{deal.errors.full_messages}"
         end
       end

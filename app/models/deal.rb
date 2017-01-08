@@ -19,6 +19,7 @@ class Deal < ActiveRecord::Base
   include PgSearch
 
   scope :by_date,              ->            { order("created_at DESC") }
+  # scope :by_start_date,        ->            { order("created_at DESC") }
   scope :by_price,             ->            { order("price ASC") }
   scope :by_price_higher_than, -> (price)    { where("price >= ?", price) }
   scope :by_price_lower_than , -> (price)    { where("price <= ?", price) }
