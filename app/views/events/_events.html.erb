@@ -3,11 +3,7 @@
     <a href="<%= event[:links].first %>" target="blank">
       <img src="<%= event[:image_urls].first %>" class="listing">
       <h2><%= event[:title] %></h2>
-
-      <p class="ui-li-aside">
-        <%= event[:start_date] %> | <strong><%= event[:start_time] %></strong>
-      </p>
-
+      <p><%= event[:start_date] %> | <%= event[:start_time] %></p>
       <p><strong><%= event[:price_text].join(" - ") %> | <%= event[:address] %></strong></p>
       <p><%= event[:description] %></p>
     </a>
