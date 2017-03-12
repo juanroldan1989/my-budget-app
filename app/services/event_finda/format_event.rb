@@ -6,13 +6,16 @@ module EventFinda
       {
         title:         event["name"],
         description:   event["description"],
+        address:       event["address"],
         deal_type:     "single",
         price_text:    [price_text],
         price:         price,
         image_urls:    [image_url],
         links:         [event["url"]],
         location_lat:  event["point"]["lat"],
-        location_long: event["point"]["lat"]
+        location_long: event["point"]["lat"],
+        start_date:    event["datetime_summary"],
+        start_time:    event["datetime_start"].to_time.strftime("%H:%M"),
       }
     end
 
