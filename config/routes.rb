@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
-  get "/deals"          => "deals#index"
-  get "/deals/filter"   => "deals#filter"
-  get "/deals/:id"      => "deals#show"
+  resources :deals, only: [:index, :show] do
+    collection do
+      get :filter
+    end
+  end
 
-  root "deals#index"
+  resources :events, only: [] do
+    collection do
+      get :filter
+    end
+  end
+
+  root "events#index"
 end

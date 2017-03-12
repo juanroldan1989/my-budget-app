@@ -1,0 +1,12 @@
+<% collection.each do |event| %>
+  <li>
+    <a href="<%= event[:links].first %>" target="blank">
+      <img src="<%= event[:image_urls].first %>" width="100%" class="listing">
+      <h2><%= event[:title] %></h2>
+      <p><strong><%= event[:price_text].join(" - ") %></strong></p>
+
+      <!-- make events display full content when is clicked from the list: description, location with map, address and more... -->
+      <p><%= event[:description] %></p>
+    </a>
+  </li>
+<% end %>

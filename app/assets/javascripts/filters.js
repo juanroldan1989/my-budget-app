@@ -6,7 +6,9 @@ $(document).ready(function(){
 });
 
 function ajax_filter() {
-  var hash = { price: get_price(), keywords: get_keywords() };
+  var hash             = { price: get_price(), keywords: get_keywords() };
+  var section          = $("#section").text();
+  var div_with_results = "ul#" + section;
 
   // console.log(hash);
 
@@ -17,12 +19,12 @@ function ajax_filter() {
     beforeSend: function(xhr){
       xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
     },
-    url      : "/deals/filter",
+    url      : "/" + section + "/filter",
     data     : hash,
     success  : function(data){
-      $("ul#results").html("");
-      $("ul#results").html(data);
-      $("ul#results").listview("refresh");
+      $(div_with_results).html("");
+      $(div_with_results).html(data);
+      $(div_with_results).listview("refresh");
       $("#loader").loader("hide");
     }
   });
