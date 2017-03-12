@@ -2,7 +2,7 @@
   <a href="https://github.com/juanroldan1989/my-budget-app"><img width="450" src="https://github.com/juanroldan1989/my-budget-app/raw/master/app/assets/images/auckland.jpg" alt="my budget app logo" /></a>
 </div>
 
-# Finding deals in Auckland
+# Deals and Events in NZ
 
 [![Code Climate](https://codeclimate.com/github/juanroldan1989/my-budget-app/badges/gpa.svg)](https://codeclimate.com/github/juanroldan1989/my-budget-app)
 [![Build Status](https://travis-ci.org/juanroldan1989/my-budget-app.svg?branch=master)](https://travis-ci.org/juanroldan1989/my-budget-app)
@@ -10,7 +10,7 @@
 
 - Responsive web application built to look out single/combined deals in Auckland.
 - Allows importing deals/events from BookMe and EventFinda websites.
-- To filter events by Price and Keywords ("tours", "hotels", "food", "drinks", "beaches" and "fun").
+- Events filtered by Price and Keywords ("tours", "hotels", "food", "drinks", "beaches" and "fun").
 - Results returned from API cached within the application. Expiration time: 1 hour.
 
 ## 1. Development

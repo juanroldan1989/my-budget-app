@@ -1,13 +1,13 @@
 class Deal < ActiveRecord::Base
 
   KEYWORDS = {
-    hotels_tours:
+    hotels:
     %w( hotel tour accommodation house lodge bed breakfast hostel apart
         pension posada inn),
-    beaches_fun:
+    beaches:
     %w( beach fun seaside seashore shore coast seaboard water sand
         party night club),
-    drinks_food:
+    drinks:
     %w( drink food alcohol tipple bottle booze beer pizza bar eat cocktail
         cook baking bake cuisine refreshment meal ration store meat)
   }
@@ -20,7 +20,7 @@ class Deal < ActiveRecord::Base
 
   scope :by_date,              ->            { order("created_at DESC") }
   # scope :by_start_date,        ->            { order("created_at DESC") }
-  scope :by_price,             ->            { order("price ASC") }
+  scope :by_price,             ->            { order("price DESC") }
   scope :by_price_higher_than, -> (price)    { where("price >= ?", price) }
   scope :by_price_lower_than , -> (price)    { where("price <= ?", price) }
   scope :by_type,              -> (type)     { where(deal_type: type) }

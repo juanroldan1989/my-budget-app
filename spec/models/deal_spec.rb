@@ -22,7 +22,7 @@ RSpec.describe Deal, ".by_price" do
     middle_price_deal  = create(:deal, title: "Deal 5",  price: 5)
     lowest_price_deal  = create(:deal, title: "Deal 1",  price: 1)
 
-    expect(Deal.by_price).to eq [lowest_price_deal, middle_price_deal, highest_price_deal]
+    expect(Deal.by_price).to eq [highest_price_deal, middle_price_deal, lowest_price_deal]
   end
 end
 

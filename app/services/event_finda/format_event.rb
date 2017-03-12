@@ -5,7 +5,7 @@ module EventFinda
     def call
       {
         title:         event["name"],
-        description:   [event["description"]],
+        description:   event["description"],
         deal_type:     "single",
         price_text:    [price_text],
         price:         price,

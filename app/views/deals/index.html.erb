@@ -6,33 +6,19 @@
 <div data-role="page" data-title="Deals in Auckland">
   <div role="main" class="ui-content jqm-content jqm-fullwidth">
 
-    <fieldset data-role="controlgroup" data-type="horizontal">
-      <input type="radio" name="price-radio" data-behavior="price-filter" id="price-radio-50" value="50">
-      <label for="price-radio-50">$50</label>
-      <input type="radio" name="price-radio" data-behavior="price-filter" id="price-radio-100" value="100">
-      <label for="price-radio-100">$100</label>
-      <input type="radio" name="price-radio" data-behavior="price-filter" id="price-radio-150" value="150">
-      <label for="price-radio-150">$150</label>
-      <input type="radio" name="price-radio" data-behavior="price-filter" id="price-radio-200" value="200">
-      <label for="price-radio-200">$200</label>
-    </fieldset>
-
-    <fieldset data-role="controlgroup">
-      <input type="checkbox" data-behavior="keywords-filter" id="keywords_1" data-value="hotels_tours">
-      <label for="keywords_1">Hotels & Tours</label>
-      <input type="checkbox" data-behavior="keywords-filter" id="keywords_2" data-value="beaches_fun">
-      <label for="keywords_2">Beaches & Fun</label>
-      <input type="checkbox" data-behavior="keywords-filter" id="keywords_3" data-value="drinks_food">
-      <label for="keywords_3">Drinks & Food</label>
-    </fieldset>
+    <%= render partial: "shared/filters", locals: { section: "deals" } %>
 
     <br/>
 
     <div id="loader"></div>
 
-    <ul id="results" data-role="listview" data-inset="false">
+    <ul id="deals" data-role="listview" data-inset="false">
       <%= render partial: collection %>
     </ul>
 
   </div><!-- /content -->
 </div><!-- /page -->
+
+<!-- For JS filters -->
+<div id="section">deals</div>
+<!-- For JS filters -->

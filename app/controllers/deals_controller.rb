@@ -1,6 +1,6 @@
+# Check combined deals including different events
 class DealsController < ApplicationController
 
-  # filter's order is important
   has_scope :by_type,     as: :deal_type
   has_scope :by_price,    as: :price
   has_scope :by_keywords, as: :keywords, type: :array

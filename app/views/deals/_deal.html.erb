@@ -2,6 +2,7 @@
   <a href="/deals/<%= deal.slug %>" data-transition="slide">
     <img src="<%= deal.image_urls.first %>" class="listing">
     <h2><%= deal.title.html_safe %></h2>
-    <p><%= deal_price_text(deal) %></p>
+    <p><strong><%= deal_price_text(deal) %></strong></p>
+    <p><%= deal.description.first.html_safe %></p>
   </a>
 </li>

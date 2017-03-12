@@ -19,7 +19,7 @@ RSpec.describe DealsController do
 
       get :index
 
-      expect(subject.send(:collection)).to eq [deal_1, deal_2]
+      expect(subject.send(:collection)).to eq [deal_2, deal_1]
     end
   end
 
@@ -56,33 +56,33 @@ RSpec.describe DealsController do
     describe "filtering deals by 'deal_type'" do
       it "loads all 'single' deals sorted by price into @collection" do
         get :filter, deal_type: "single"
-        expect(subject.send(:collection)).to eq [@deal_1, @deal_3]
+        expect(subject.send(:collection)).to eq [@deal_3, @deal_1]
       end
 
       it "loads all 'combined' deals sorted by price into @collection" do
         get :filter, deal_type: "combined"
-        expect(subject.send(:collection)).to eq [@deal_2, @deal_4]
+        expect(subject.send(:collection)).to eq [@deal_4, @deal_2]
       end
     end
 
     it "loads all deals with prices lower than '30' into @collection" do
       get :filter, price: 30
-      expect(subject.send(:collection)).to eq [@deal_1, @deal_2, @deal_3]
+      expect(subject.send(:collection)).to eq [@deal_3, @deal_2, @deal_1]
     end
 
     describe "filtering deals by keywords" do
-      it "loads all deals matching 'hotels_tours' keywords into @collection" do
-        get :filter, keywords: ["hotels_tours"]
-        expect(subject.send(:collection).to_a).to eq [@deal_1, @deal_4]
+      it "loads all deals matching 'hotels' keywords into @collection" do
+        get :filter, keywords: ["hotels"]
+        expect(subject.send(:collection).to_a).to eq [@deal_4, @deal_1]
       end
 
-      it "loads all deals matching 'beaches_fun' keywords into @collection" do
-        get :filter, keywords: ["beaches_fun"]
+      it "loads all deals matching 'beaches' keywords into @collection" do
+        get :filter, keywords: ["beaches"]
         expect(subject.send(:collection).to_a).to eq [@deal_2]
       end
 
-      it "loads all deals matching 'drinks_food' keywords into @collection" do
-        get :filter, keywords: ["drinks_food"]
+      it "loads all deals matching 'drinks' keywords into @collection" do
+        get :filter, keywords: ["drinks"]
         expect(subject.send(:collection).to_a).to eq [@deal_3]
       end
     end
