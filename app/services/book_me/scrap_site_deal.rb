@@ -15,7 +15,7 @@ module BookMe
 
     def call
       {
-        title:       page.css(".activityWrapper h2").text,
+        title:       page.css(".activityWrapper h1").text,
         description: [sanitize_description],
         deal_type:   "single",
         price_text:  [sanitize_price_text],
