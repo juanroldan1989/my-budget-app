@@ -1,6 +1,10 @@
 require "rails_helper"
 
 RSpec.describe Deal do
+  let(:deal_1) { create(:deal, title: "Deal 10", price: 10) }
+  let(:deal_2) { create(:deal, title: "Deal 5", price: 5) }
+  let(:deal_3) { create(:deal, title: "Deal 1", price: 1) }
+
   describe "validations" do
     it { is_expected.to validate_presence_of(:title) }
     it { is_expected.to validate_presence_of(:price) }
@@ -19,9 +23,9 @@ RSpec.describe Deal do
 
   describe ".by_price" do
     it "returns deals: from lowest price to highest price" do
-      highest_price_deal = create(:deal, title: "Deal 10", price: 10)
-      middle_price_deal  = create(:deal, title: "Deal 5",  price: 5)
-      lowest_price_deal  = create(:deal, title: "Deal 1",  price: 1)
+      highest_price_deal = deal_1
+      middle_price_deal  = deal_2
+      lowest_price_deal  = deal_3
 
       expect(Deal.by_price).to eq [highest_price_deal, middle_price_deal, lowest_price_deal]
     end
@@ -30,10 +34,6 @@ RSpec.describe Deal do
   describe ".by_price_higher_than" do
     it "returns deals: with price higher or equal than X" do
       x = 5
-
-      deal_1 = create(:deal, title: "Deal 10", price: 10)
-      deal_2 = create(:deal, title: "Deal 5",  price: 5)
-      deal_3 = create(:deal, title: "Deal 1",  price: 1)
 
       expect(Deal.by_price_higher_than(x)).to eq [deal_1,deal_2]
       expect(Deal.by_price_higher_than(x)).not_to include(deal_3)
@@ -44,10 +44,6 @@ RSpec.describe Deal do
     it "returns deals: with price lower or equal than X" do
       x = 5
 
-      deal_1 = create(:deal, title: "Deal 10", price: 10)
-      deal_2 = create(:deal, title: "Deal 5",  price: 5)
-      deal_3 = create(:deal, title: "Deal 1",  price: 1)
-
       expect(Deal.by_price_lower_than(x)).to eq [deal_2, deal_3]
       expect(Deal.by_price_lower_than(x)).not_to include deal_1
     end
@@ -55,19 +51,23 @@ RSpec.describe Deal do
 
   describe ".by_type" do
     describe "returns deals filtered by type"do
+      let(:deal_10_single) { create(:deal, title: "Deal 10", deal_type: "single") }
+      let(:deal_5_combined) { create(:deal, title: "Deal 5", deal_type: "combined") }
+      let(:deal_1_single) { create(:deal, title: "Deal 1", deal_type: "single") }
+
       it "returns 'single' deals" do
-        deal_1 = create(:deal, title: "Deal 10", deal_type: "single")
-        deal_2 = create(:deal, title: "Deal 5",  deal_type: "combined")
-        deal_3 = create(:deal, title: "Deal 1",  deal_type: "single")
+        deal_1 = deal_10_single
+        deal_2 = deal_5_combined
+        deal_3 = deal_1_single
 
         expect(Deal.by_type("single")).to eq [deal_3, deal_1]
         expect(Deal.by_type("single")).not_to include deal_2
       end
 
       it "returns 'combined' deals" do
-        deal_1 = create(:deal, title: "Deal 10", deal_type: "single")
-        deal_2 = create(:deal, title: "Deal 5",  deal_type: "combined")
-        deal_3 = create(:deal, title: "Deal 1",  deal_type: "single")
+        deal_1 = deal_10_single
+        deal_2 = deal_5_combined
+        deal_3 = deal_1_single
 
         expect(Deal.by_type("combined")).to eq [deal_2]
         expect(Deal.by_type("combined")).not_to include [deal_1, deal_3]
