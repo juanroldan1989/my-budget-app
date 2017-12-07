@@ -33,19 +33,15 @@ RSpec.describe Deal do
 
   describe ".by_price_higher_than" do
     it "returns deals: with price higher or equal than X" do
-      x = 5
-
-      expect(Deal.by_price_higher_than(x)).to eq [deal_1,deal_2]
-      expect(Deal.by_price_higher_than(x)).not_to include(deal_3)
+      expect(Deal.by_price_higher_than(5)).to eq [deal_1,deal_2]
+      expect(Deal.by_price_higher_than(5)).not_to include(deal_3)
     end
   end
 
   describe ".by_price_lower_than" do
     it "returns deals: with price lower or equal than X" do
-      x = 5
-
-      expect(Deal.by_price_lower_than(x)).to eq [deal_2, deal_3]
-      expect(Deal.by_price_lower_than(x)).not_to include deal_1
+      expect(Deal.by_price_lower_than(5)).to eq [deal_2, deal_3]
+      expect(Deal.by_price_lower_than(5)).not_to include deal_1
     end
   end
 
