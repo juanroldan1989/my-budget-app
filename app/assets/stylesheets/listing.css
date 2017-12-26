@@ -17,6 +17,14 @@ img.show {
   display:none;
 }
 
+.fixed {
+  background-color: white;
+  position: fixed;
+  width: 40%;
+  top: 0px;
+  z-index: 1000;
+}
+
 #filters {
   background: white;
 }
