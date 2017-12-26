@@ -10,6 +10,7 @@ module EventFinda
         deal_type:     "single",
         price_text:    [price_text],
         price:         price,
+        full_price:    full_price,
         image_urls:    [image_url],
         links:         [event["url"]],
         location_lat:  event["point"]["lat"],
@@ -61,6 +62,20 @@ module EventFinda
       else
         0
       end
+    end
+
+    def full_price
+      result = price_text
+
+      if price_text != "Price to confirm"
+        if price == 0 || price == 0.00 || price == "0.00"
+          result += " - Free"
+        else
+          result += " - $#{price}"
+        end
+      end
+
+      result
     end
 
   end
