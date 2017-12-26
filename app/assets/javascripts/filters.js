@@ -10,6 +10,8 @@ function ajax_filter() {
 
   // console.log(hash);
 
+  update_browser_history();
+
   $("#loading").show();
 
   $.ajax({
@@ -54,4 +56,20 @@ function price_filter() {
   $("[data-behavior~=price-filter]").on("change", function() {
     ajax_filter();
   });
+}
+
+function update_browser_history() {
+  var href = "/";
+
+  if (get_price() != undefined) {
+    href = href + "?price=" + get_price();
+  }
+  var array = get_keywords();
+
+  for (var i in array) {
+    href = href + "&keywords[]=" + array[i];
+  }
+
+  history.pushState({}, '', href);
+  // console.log("HREF: " + href);
 }
