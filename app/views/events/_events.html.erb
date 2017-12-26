@@ -1,11 +1,22 @@
-<% collection.each do |event| %>
-  <li>
-    <a href="<%= event[:links].first %>" target="blank">
-      <img src="<%= event[:image_urls].first %>" class="listing">
-      <h2><%= event[:title] %></h2>
-      <p><%= event[:start_date] %> | <%= event[:start_time] %></p>
-      <p><strong><%= event[:price_text].join(" - ") %> | <%= event[:address] %></strong></p>
-      <p><%= event[:description] %></p>
-    </a>
-  </li>
+<% collection.in_groups_of(3).each do |group| %>
+
+  <div class="row">
+  <% group.each do |event| %>
+    <% if event %>
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="<%= event[:image_urls].first %>">
+            <span class="card-title"><%= event[:title] %></span>
+            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+          </div>
+          <div class="card-content">
+            <p><%= event[:description] %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+
 <% end %>

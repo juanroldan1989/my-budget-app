@@ -11,8 +11,7 @@
  * file per style scope.
  *
  *= require_self
- *= require jquery.mobile-1.4.5.min
  *= require listing
  *= require map
- *= require event-finda-theme.min
+ *= require materialize
  */
