@@ -1,12 +1,11 @@
 <!-- http://materializecss.com/cards.html -->
 
+<div id="header"></div>
+
 <div class="container">
-  <h1>Events in NZ</h1>
-
-  <%= render partial: "shared/filters", locals: { section: "events" } %>
-
   <br/>
-
+  <%= render partial: "shared/filters", locals: { section: "events" } %>
+  <br/>
   <div id="loader"></div>
 
   <div id="events">

@@ -16,3 +16,7 @@ img.show {
   top:65%;
   display:none;
 }
+
+#filters {
+  background: white;
+}
