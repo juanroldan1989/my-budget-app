@@ -1,5 +1,20 @@
 <!-- http://materializecss.com/cards.html -->
 
 <div class="container">
-  <%= render partial: "events", collection: collection %>
+  <h1>Events in NZ</h1>
+
+  <%= render partial: "shared/filters", locals: { section: "events" } %>
+
+  <br/>
+
+  <div id="loader"></div>
+
+  <div id="events">
+    <%= render partial: "events" %>
+  </div>
 </div>
+
+
+<!-- For JS filters -->
+<div id="section" hidden>events</div>
+<!-- For JS filters -->
