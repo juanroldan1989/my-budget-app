@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # WIP
   resources :deals, only: [:index, :show] do
     collection do
       get :filter
@@ -12,4 +13,6 @@ Rails.application.routes.draw do
   end
 
   root "events#index"
+
+  get "*a" => redirect("/")
 end

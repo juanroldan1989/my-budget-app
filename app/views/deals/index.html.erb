@@ -1,23 +1,23 @@
 <div data-role="header" data-position="fixed" data-theme="a">
   <a href="/" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
     <h1>Deals in NZ</h1>
-</div><!-- /header -->
+</div>
 
 <div data-role="page" data-title="Deals in Auckland">
   <div role="main" class="ui-content jqm-content jqm-fullwidth">
 
-    <%= render partial: "shared/filters", locals: { section: "deals" } %>
+    <%#= render partial: "shared/filters", locals: { section: "deals" } %>
 
     <br/>
 
     <div id="loader"></div>
 
     <ul id="deals" data-role="listview" data-inset="false">
-      <%= render partial: collection %>
+      <%#= render partial: collection %>
     </ul>
 
-  </div><!-- /content -->
-</div><!-- /page -->
+  </div>
+</div>
 
 <!-- For JS filters -->
 <div id="section">deals</div>
