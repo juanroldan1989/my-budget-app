@@ -8,7 +8,7 @@
 [![Build Status](https://travis-ci.org/juanroldan1989/my-budget-app.svg?branch=master)](https://travis-ci.org/juanroldan1989/my-budget-app)
 [![Coverage Status](https://coveralls.io/repos/github/juanroldan1989/my-budget-app/badge.svg?branch=master)](https://coveralls.io/github/juanroldan1989/my-budget-app?branch=master)
 
-- Responsive web application built to look out single/combined deals in Auckland.
+- Responsive web application built to look out single/combined deals in New Zealand.
 - Allows importing deals/events from BookMe and EventFinda websites.
 - Events filtered by Price and Keywords ("tours", "hotels", "food", "drinks", "beaches" and "fun").
 - Results returned from API cached within the application. Expiration time: 1 hour.
@@ -103,10 +103,3 @@ Heroku's Redis addon displaying stored keys in live app:
 ## 3. Q&A
 
 Questions or problems? Please post them on the [issue tracker](https://github.com/juanroldan1989/my-budget-app/issues). You can contribute changes by forking the project and submitting a pull request. You can ensure the tests are passing by running `rspec spec`.
-
-
-## 4. Live app
-
-http://my-budget-in-auckland.herokuapp.com
-
-<img width="450" src="https://github.com/juanroldan1989/my-budget-app/raw/master/app/assets/images/screenshot.png" alt="my budget app logo" /></a>
