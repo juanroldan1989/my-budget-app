@@ -8,7 +8,9 @@ function ajax_filter() {
   var section          = $("#section").text();
   var div_with_results = "#" + section;
 
-  console.log(hash);
+  // console.log(hash);
+
+  $("#loading").show();
 
   $.ajax({
     type    : "GET",
@@ -20,6 +22,7 @@ function ajax_filter() {
     success  : function(data){
       $(div_with_results).html("");
       $(div_with_results).html(data);
+      $("#loading").hide();
     }
   });
 }
