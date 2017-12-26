@@ -5,3 +5,13 @@ body {
 label {
   color: black;
 }
+
+[type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+  padding-left: 25px;
+  padding-right: 20px;
+}
+
+[type="checkbox"] + label {
+  padding-left: 25px;
+  padding-right: 20px;
+}
