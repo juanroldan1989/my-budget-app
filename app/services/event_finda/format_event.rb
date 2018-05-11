@@ -6,7 +6,7 @@ module EventFinda
       {
         title:         event["name"],
         description:   event["description"],
-        # address:       event["address"],   # not implemented in local DB
+        address:       event["address"],
         deal_type:     "single",
         price_text:    [price_text],
         price:         price,
@@ -15,8 +15,8 @@ module EventFinda
         links:         [event["url"]],
         location_lat:  event["point"]["lat"],
         location_long: event["point"]["lat"],
-        # start_date:    event["datetime_summary"], # not implemented in local DB
-        # start_time:    event["datetime_start"].to_time.strftime("%H:%M"), # not implemented in local DB
+        start_date:    event["datetime_summary"],
+        start_time:    event["datetime_start"].to_time.strftime("%H:%M %p")
       }
     end
 

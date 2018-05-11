@@ -18,7 +18,7 @@ class EventsController < ApplicationController
   def collection
     Rails.cache.fetch("/v1/events/#{search_keys}", expires_in: 1.hour) do
       events_filter.results
-        .collect { |event_hash| EventFinda::FormatEvent.new(event_hash).call }
+        .map { |event_hash| EventFinda::FormatEvent.new(event_hash).call }
     end
   end
 
